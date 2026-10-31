@@ -1,0 +1,47 @@
+/* Estilo general para toda la página */
+body {
+    background-color: #0d1117; /* Fondo oscuro tipo consola / editor */
+    color: #e6edf3; /* Letras claras para cuidar la vista */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Estilo para el título principal */
+h1 {
+    color: #58a6ff; /* Azul brillante estilo gamer */
+    border-bottom: 2px solid #30363d;
+    padding-bottom: 10px;
+}
+
+/* Estilo para los subtítulos */
+h2 {
+    color: #bc8cff; /* Tono morado llamativo */
+}
+
+/* Estilo para los párrafos */
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+.mi-menu-horizontal {
+    display: flex; /* Cambia de vertical a horizontal */
+    gap: 20px;     /* Separa los elementos */
+}
+/* Estilo para controlar el tamaño de la imagen principal */
+.imagen-principal {
+    width: 100%;        /* La imagen ocupará como máximo el 100% del espacio disponible */
+    max-width: 350px;   /* Pero nunca será más ancha que 600 píxeles (un tamaño ideal) */
+    height: auto;       /* La altura se ajusta automáticamente para no deformar la imagen */
+    border-radius: 10px; /* Le da unas esquinas redondeadas bien pro */
+    display: block;     /* Ayuda a que se comporte mejor en la página */
+    margin-top: 20px;   /* Un pequeño espacio arriba */
+    margin-left: auto;  /* Centra la imagen */
+    margin-right: auto; /* Centra la imagen */
+}
+.galeria {
+    display: flex;          /* Pone los elementos en fila (horizontal) */
+    gap: 20px;              /* Espacio de separación entre imagen e imagen */
+    justify-content: center; /* Centra las imágenes en la página */
+    flex-wrap: wrap;        /* Permite que bajen si la pantalla es muy pequeña */
+}
