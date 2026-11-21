@@ -1,47 +1,136 @@
-/* Estilo general para toda la página */
-body {
-    background-color: #0d1117; /* Fondo oscuro tipo consola / editor */
-    color: #e6edf3; /* Letras claras para cuidar la vista */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Reset básico para evitar márgenes raros del navegador */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0B0E14;
+    color: #F0F4F8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Para que el footer siempre quede abajo */
+}
+
+/* --- BARRA DE NAVEGACIÓN (ARRIBA) --- */
+header {
+    background-color: #151B28;
+    border-bottom: 2px solid #00FF88;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between; /* Separa logo/título a la izq y menú a la der */
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.15);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #00FF88;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.marca h1 {
+    font-size: 1.5rem;
+    color: #00FF88;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #F0F4F8;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #00FF88;
+    text-shadow: 0 0 8px #00FF88;
+}
+
+/* --- CONTENIDO PRINCIPAL (CENTRO) --- */
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
     padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-/* Estilo para el título principal */
-h1 {
-    color: #58a6ff; /* Azul brillante estilo gamer */
-    border-bottom: 2px solid #30363d;
-    padding-bottom: 10px;
+/* Caja izquierda (Imagen) */
+.caja-imagen {
+    flex: 1; /* Ocupa 1 parte del espacio */
+    background-color: #151B28;
+    border: 2px solid #8A2BE2;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.25);
 }
 
-/* Estilo para los subtítulos */
-h2 {
-    color: #bc8cff; /* Tono morado llamativo */
+.caja-imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
 }
 
-/* Estilo para los párrafos */
-p {
-    font-size: 1.1rem;
-    line-height: 1.6;
+/* Caja derecha (Información y lista) */
+.caja-info {
+    flex: 2; /* Ocupa el doble de espacio que la imagen, como en tu boceto */
+    background-color: #151B28;
+    border: 1px solid #2A3441;
+    border-left: 4px solid #00FF88;
+    border-radius: 12px;
+    padding: 30px;
 }
-.mi-menu-horizontal {
-    display: flex; /* Cambia de vertical a horizontal */
-    gap: 20px;     /* Separa los elementos */
+
+.caja-info ul {
+    list-style: none;
 }
-/* Estilo para controlar el tamaño de la imagen principal */
-.imagen-principal {
-    width: 100%;        /* La imagen ocupará como máximo el 100% del espacio disponible */
-    max-width: 350px;   /* Pero nunca será más ancha que 600 píxeles (un tamaño ideal) */
-    height: auto;       /* La altura se ajusta automáticamente para no deformar la imagen */
-    border-radius: 10px; /* Le da unas esquinas redondeadas bien pro */
-    display: block;     /* Ayuda a que se comporte mejor en la página */
-    margin-top: 20px;   /* Un pequeño espacio arriba */
-    margin-left: auto;  /* Centra la imagen */
-    margin-right: auto; /* Centra la imagen */
+
+.caja-info li {
+    font-size: 1.2rem;
+    margin-bottom: 18px;
+    padding-left: 25px;
+    position: relative;
 }
-.galeria {
-    display: flex;          /* Pone los elementos en fila (horizontal) */
-    gap: 20px;              /* Espacio de separación entre imagen e imagen */
-    justify-content: center; /* Centra las imágenes en la página */
-    flex-wrap: wrap;        /* Permite que bajen si la pantalla es muy pequeña */
+
+/* Viñetas estilo gamer en lugar de asteriscos */
+.caja-info li::before {
+    content: "➤";
+    color: #00FF88;
+    position: absolute;
+    left: 0;
+    font-size: 1rem;
+}
+
+/* --- PIE DE PÁGINA (ABAJO) --- */
+footer {
+    background-color: #151B28;
+    border-top: 1px solid #2A3441;
+    padding: 20px 40px;
+    text-align: left; /* Alineado a la izquierda como en tu dibujo */
+    color: #8B9BB4;
+    font-size: 0.95rem;
 }
